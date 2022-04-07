@@ -49,12 +49,6 @@ echo "$IPADDRESS   $HOSTNAME.$DOMAIN       $HOSTNAME" >> /etc/hosts
 # Change Hostname
 hostnamectl set-hostname $HOSTNAME.$DOMAIN
 
-# Disable service sendmail or postfix
-
-service sendmail stop
-service postfix stop
-systemctl disable sendmail
-systemctl disable postfix
 
 # Update repo and install package
 
@@ -69,4 +63,4 @@ echo "nameserver 1.1.1.1" >> /etc/resolv.conf
 
 
 echo ""
-echo "Configuring Firewall, network, /etc/hosts and DNS server has been finished. please install Zimbra now"
+echo "Configuring Firewall, network, /etc/hosts has been finished."
